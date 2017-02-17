@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="zone"></div>
+
+<h1>OUTPUT:</h1>
+<output id="output" name="output"></output>
+
+<script src="./js/hammer.min.js"></script>
+<script type="text/javascript">
+  function delayedInnerHTML(newContent){
+    output.innerHTML += newContent;
+  }
+
+  function report(newContent) {
+    var output = document.getElementById('output');
+    setTimeout(function() { delayedInnerHTML(newContent) }, 100);
+  }
+
+  // Swipe right && left about <div id="zone"></div> --> console.log();
+  var zone = document.getElementById('zone');
+
+  var hammerZone = new Hammer(zone);
+  hammerZone.on(
+    'swiperight', function(e) {
+      e.preventDefault();
+      console.log('right');
+    }
+  ).on(
+    'swipeleft', function(e) {
+      e.preventDefault();
+      console.log('left');
+    }
+  ).on(
+    'swipedown', function(e) {
+      e.preventDefault();
+      console.log('down');
+    }
+  )
+</script>
+
+</body>
+</html>
