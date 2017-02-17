@@ -13,7 +13,8 @@
 <output id="output" name="output"></output>
 
 <h1>Canvas:</h1>
-<canvas id="canvas" width="800" height="800" style="border: 1px solid #000000;"></canvas>
+<canvas id="canvas" width="600" height="600" style="border: 1px solid #000000;"></canvas>
+<button onclick="window.init()">Initialize</button>
 
 <script type="text/javascript">
 
@@ -21,9 +22,22 @@ function report(newContent) {
   var output = document.getElementById('output');
   output.innerHTML += newContent;
 }
-function start() { report('start<br>') }
-function end() { report('end<br>') }
-function move() { report('move<br>') }
+
+function start(evt) {
+  evt.preventDefault()
+  console.log('start')
+  report('start<br>')
+}
+
+function end() {
+  console.log('end')
+  // report('end<br>')
+}
+
+function move() {
+  console.log('move')
+  // report('move<br>')
+}
 
 function init() {
   var canvas = document.getElementById('canvas');
@@ -32,8 +46,6 @@ function init() {
   canvas.addEventListener['touchend', end(), false]
   canvas.addEventListener['touchmove', move(), false]
 }
-
-init();
 </script>
 
 </body>
