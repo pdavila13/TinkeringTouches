@@ -9,5 +9,22 @@
 </head>
 <body>
 
+<canvas id="canvas" width="800" height="800"></canvas>
+
+<script type="text/javascript">
+
+function start() { console.log('start'); }
+function end() { console.log('end'); }
+function move() { console.log('move'); }
+
+function init() {
+  var canvas = this.getElementById('canvas');
+
+  canvas.addEventListener['touchstart', start(), false]
+  canvas.addEventListener['touchend', end(), false]
+  canvas.addEventListener['touchmove', move(), false]
+}
+</script>
+
 </body>
 </html>
