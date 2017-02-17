@@ -8,19 +8,23 @@
     <title>Document</title>
 </head>
 <body>
+<button onclick="window.init()">Initialize</button>
 
 <h1>OUTPUT:</h1>
 <output id="output" name="output"></output>
 
 <h1>Canvas:</h1>
-<canvas id="canvas" width="600" height="600" style="border: 1px solid #000000;"></canvas>
-<button onclick="window.init()">Initialize</button>
+<canvas id="canvas" width="400" height="400" style="border: 1px solid #000000;"></canvas>
 
 <script type="text/javascript">
 
+function delayedInnerHTML(newContent){
+  output.innerHTML += newContent;
+}
+
 function report(newContent) {
   var output = document.getElementById('output');
-  output.innerHTML += newContent;
+  setTimeout(function() { delayedInnerHTML(newContent) }, 100);
 }
 
 function start(evt) {
@@ -31,12 +35,12 @@ function start(evt) {
 
 function end() {
   console.log('end')
-  // report('end<br>')
+  report('end<br>')
 }
 
 function move() {
   console.log('move')
-  // report('move<br>')
+  report('move<br>')
 }
 
 function init() {
@@ -46,6 +50,7 @@ function init() {
   canvas.addEventListener['touchend', end(), false]
   canvas.addEventListener['touchmove', move(), false]
 }
+
 </script>
 
 </body>
