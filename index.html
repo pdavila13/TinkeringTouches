@@ -9,8 +9,11 @@
 </head>
 <body>
 
+<h1>OUTPUT:</h1>
 <output id="output" name="output"></output>
-<canvas id="canvas" width="800" height="800"></canvas>
+
+<h1>Canvas:</h1>
+<canvas id="canvas" width="800" height="800" style="border: 1px solid #000000;"></canvas>
 
 <script type="text/javascript">
 
@@ -18,9 +21,9 @@ function report(newContent) {
   var output = document.getElementById('output');
   output.innerHTML += newContent;
 }
-function start() { report('start') }
-function end() { report('end') }
-function move() { report('move') }
+function start() { report('start<br>') }
+function end() { report('end<br>') }
+function move() { report('move<br>') }
 
 function init() {
   var canvas = document.getElementById('canvas');
@@ -29,6 +32,8 @@ function init() {
   canvas.addEventListener['touchend', end(), false]
   canvas.addEventListener['touchmove', move(), false]
 }
+
+init();
 </script>
 
 </body>
