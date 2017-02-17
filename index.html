@@ -9,16 +9,21 @@
 </head>
 <body>
 
+<output id="output" name="output"></output>
 <canvas id="canvas" width="800" height="800"></canvas>
 
 <script type="text/javascript">
 
-function start() { console.log('start'); }
-function end() { console.log('end'); }
-function move() { console.log('move'); }
+function report(newContent) {
+  var output = document.getElementById('output');
+  output.innerHTML += newContent;
+}
+function start() { report('start') }
+function end() { report('end') }
+function move() { report('move') }
 
 function init() {
-  var canvas = this.getElementById('canvas');
+  var canvas = document.getElementById('canvas');
 
   canvas.addEventListener['touchstart', start(), false]
   canvas.addEventListener['touchend', end(), false]
