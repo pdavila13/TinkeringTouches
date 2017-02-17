@@ -1,0 +1,23 @@
+{
+  "name": "TinkeringTouches",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pdavila13/TinkeringTouches.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pdavila13/TinkeringTouches/issues"
+  },
+  "homepage": "https://github.com/pdavila13/TinkeringTouches#readme",
+  "dependencies": {
+    "hammerjs": "^2.0.8"
+  }
+}
