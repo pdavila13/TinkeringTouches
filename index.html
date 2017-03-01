@@ -18,38 +18,39 @@
 
 <script type="text/javascript">
 
-function delayedInnerHTML(newContent){
-  output.innerHTML += newContent;
-}
+    function delayedInnerHTML(newContent){
+      output.innerHTML += newContent;
+    }
 
-function report(newContent) {
-  var output = document.getElementById('output');
-  setTimeout(function() { delayedInnerHTML(newContent) }, 100);
-}
+    function report(newContent) {
+      var output = document.getElementById('output');
+      setTimeout(function() { delayedInnerHTML(newContent) }, 100);
+    }
 
-function start(evt) {
-  evt.preventDefault();
-  console.log('start')
-  report('start<br>')
-}
+    function start() {
+      console.log('start')
+      report('start<br>');
+    }
 
-function end() {
-  console.log('end')
-  report('end<br>')
-}
+    function end() {
+      console.log('end')
+      report('end<br>');
+    }
 
-function move() {
-  console.log('move')
-  report('move<br>')
-}
+    function move() {
+      console.log('move')
+      report('move<br>');
+    }
 
-function init() {
-  var canvas = document.getElementById('canvas');
+    function init() {
+      var canvas = document.getElementById('canvas');
 
-  canvas.addEventListener['touchstart', start(), false]
-  canvas.addEventListener['touchend', end(), false]
-  canvas.addEventListener['touchmove', move(), false]
-}
+      canvas.addEventListener('touchstart', start, false);
+      canvas.addEventListener('touchend', end, false);
+      canvas.addEventListener('touchmove', move, false);
+    }
+
+    init();
 
 </script>
 
